@@ -62,32 +62,26 @@ class PixelAdventure extends FlameGame with HasKeyboardHandlerComponents,DragCal
   void updateJoystick() {
     switch (joystick.direction) {
       case JoystickDirection.left:
-        player.playerDirection=PlayerDirection.left;
-        
         break;
         case JoystickDirection.upLeft:
-        player.playerDirection=PlayerDirection.left;
+       
         
         break;
         case JoystickDirection.downLeft:
-        player.playerDirection=PlayerDirection.left;
+        player.horizontalMovement=-1;
         
         break;
         
           case JoystickDirection.right:
-             player.playerDirection=PlayerDirection.right;
-        
-        break;
         case JoystickDirection.upRight:
-             player.playerDirection=PlayerDirection.right;
-        
-        break;
         case JoystickDirection.downRight:
-             player.playerDirection=PlayerDirection.right;
+        player.horizontalMovement=1;
+
+
         
         break;
         
-      default:player.playerDirection=PlayerDirection.none;
+      default:player.horizontalMovement=0;
       break;
     }
   }
